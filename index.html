@@ -61,33 +61,54 @@
     <!-- category list -->
     <hr />
     <!-- alert -->
-    <div class="alert alert-success shadow-lg max-w-screen-lg mx-auto my-2 hidden">
+    <div class="alert alert-success shadow-lg max-w-screen-lg mx-auto my-2">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span>Your purchase has been confirmed!</span>
+        <span><span id="number-of-news"></span> News find in <span id="name-of-category"></span></span>
       </div>
     </div>
     <!-- alert  -->
   </header>
   <!-- Header End -->
+
   <!-- error -->
   <section id="news-not-found" class="hidden">
     <h1 class="text-center my-16 font-semibold text-8xl">No News Found</h1>
   </section>
   <!-- error -->
+
+  <!-- Spinner -->
+  <section id="spinner" class="animate-spin text-center mt-20 hidden">
+    <span class="text-8xl"><i class="fa-solid fa-spinner"></i></span>
+  </section>
+  <!-- Spinner -->
+
   <!-- main -->
   <main id="card-container" class="max-w-screen-xl mx-auto">
     <!-- card -->
-    
+
     <!-- card -->
   </main>
   <!-- main -->
 
+  <!-- load more btn -->
+  <section class="flex justify-center mt-12 mb-20">
+    <button onclick="loadMore()" class="btn btn-wide btn-outline hidden">Load More...</button>
+  </section>
+  <!-- load more btn -->
+
   <!-- <div onclick=""></div> -->
+
+  <!-- Modal -->
+  <section>
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div id="modal-container" class="modal"></div>
+  </section>
+  <!-- Modal -->
 
 
 
