@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -24,11 +24,95 @@
 <body>
   <!-- Header Start -->
   <header>
-    
-
+    <!-- Top nav -->
+    <nav class="shadow-xl">
+      <div class="navbar bg-base-100 max-w-screen-xl mx-auto py-4">
+        <div class="w-full">
+          <a href="index.html" class="w-[10%]"><img src="img/favicon.png" alt="logo" /></a>
+        </div>
+        <div class="flex gap-8 items-center">
+          <div class="flex">
+            <a href="#" class="btn btn-ghost text-2xl">Blog</a>
+            <a href="#" class="btn btn-ghost text-2xl">News</a>
+          </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-16 rounded-full">
+                <img src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+              </div>
+            </label>
+            <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Top nav -->
+    <!-- category list -->
+    <ul id="category-container" class="max-w-screen-xl mx-auto my-4 flex justify-between"></ul>
+    <!-- category list -->
+    <hr />
+    <!-- alert -->
+    <div class="alert alert-success shadow-lg max-w-screen-lg mx-auto my-2 hidden">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Your purchase has been confirmed!</span>
+      </div>
+    </div>
+    <!-- alert  -->
   </header>
   <!-- Header End -->
-
+  <!-- main -->
+  <main id="card-container" class="max-w-screen-xl mx-auto">
+    <!-- card -->
+    <!-- <div class="my-8">
+      <div class="card lg:card-side bg-base-300 shadow-xl">
+        <img class="rounded-none" src="https://i.ibb.co/QnwC4sG/unsplash-Eh-Tc-C9s-YXsw-11.png" alt="Album" />
+        <div class="card-body flex flex-col gap-16">
+          <div>
+            <h2 class="card-title text-3xl">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid
+              Package Yet</h2>
+            <p>Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia,
+              Security, UK, Ukraine, United States, Worthy News (Worthy News) - U.S. President Joe Biden...</p>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="flex gap-4 items-center">
+              <img class="rounded-full w-16" src="https://xsgames.co/randomusers/avatar.php?g=male" alt="author" />
+              <div>
+                <p>Jimmy Dane</p>
+                <p>2022-08-24 17:27:34</p>
+              </div>
+            </div>
+            <div>
+              <i class="fa-regular fa-eye"></i><span class="ml-2">488</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star-half-stroke"></i><span> 4.5</span>
+            </div>
+            <button id="modal-btn" class="text-4xl btn btn-ghost"><i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- card -->
+  </main>
+  <!-- main -->
 
 
   <script src="js/script.js"></script>
