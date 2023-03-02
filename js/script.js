@@ -1,3 +1,6 @@
+let selectedCategoryName = 'All News';
+let selectedCategoryId = '08';
+
 // spinner
 const spin = isSpin => {
   if (isSpin) {
@@ -7,34 +10,41 @@ const spin = isSpin => {
   }
 };
 
-// Load More
-const loadMore = () => {
-  // console.log('click...');
-
-};
-
 // news category
 const newsCategoryFetch = () => {
   fetch('https://openapi.programming-hero.com/api/news/categories').then(res => res.json()).then(data => categories(data.data.news_category));
 };
+
 // news category call
 newsCategoryFetch();
+
+
 const categories = data => {
   const container = document.getElementById('category-container');
   data.forEach(element => {
-    container.innerHTML += `<li><a onclick="categoriesNews('${element.category_id}', '${element.category_name}')" class="btn btn-ghost text-xl" href="#">${element.category_name}</a></li>`;
+    container.innerHTML += `<li><a onclick="categoriesNews('${element.category_id}', '${element.category_name}', '5')" class="btn btn-ghost text-xl" href="#">${element.category_name}</a></li>`;
   });
 };
 
 // show categories news
-const categoriesNews = (category_id, category_name) => {
+const categoriesNews = (category_id, category_name, limit) => {
+  selectedCategoryName = category_name;
+  selectedCategoryId = category_id;
   const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
-  fetch(url).then(res => res.json()).then(data => showNews(data.data, category_name));
+  fetch(url).then(res => res.json()).then(data => {
+    let news = data.data;
+    console.log(limit);
+    if (limit) {
+      news = news.slice(0, +limit);
+    }
+    showNews(news, category_name);
+  });
   spin(true);
+  // loadMore(data, category_name);
   console.log(url, category_id, category_name);
 };
 // default news call
-categoriesNews('08', 'All News');
+categoriesNews('08', 'All News', 5);
 
 // card function
 const showNews = (data, category_name) => {
@@ -52,10 +62,13 @@ const showNews = (data, category_name) => {
     document.getElementById('news-not-found').classList.add('hidden');
   }
 
-  // data = data.slice(0, 5);
-  // if(data.length > 5 && ){
 
-  // }
+  if (data.length >= 5) {
+    document.getElementById('load-more-btn').classList.remove('hidden');
+  } else {
+    document.getElementById('load-more-btn').classList.add('hidden');
+  }
+
 
   data.forEach(element => {
     // console.log(element);
@@ -101,6 +114,14 @@ const showNews = (data, category_name) => {
     `;
   });
   spin(false);
+};
+
+
+// Load More
+const loadMore = () => {
+  
+  categoriesNews(selectedCategoryId, selectedCategoryName);
+
 };
 
 
